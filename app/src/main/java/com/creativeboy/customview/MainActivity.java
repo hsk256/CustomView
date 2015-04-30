@@ -1,5 +1,6 @@
 package com.creativeboy.customview;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,17 +8,39 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.creativeboy.customview.fragment.ColorOptionsFragment;
+import com.creativeboy.customview.fragment.CustomRingWaveFragment;
+import com.creativeboy.customview.utils.Constants;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
     }
-    public void onClicked(View view) {
-        String text = view.getId()==R.id.view1?"Background":"Foreground";
-        Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
+
+
+    public void init() {
+        findViewById(R.id.ring_wave).setOnClickListener(this);
+        findViewById(R.id.color_options).setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(MainActivity.this,MainFragment.class);
+        switch (v.getId()) {
+            case R.id.ring_wave:
+                intent.putExtra(Constants.FRAGMENT_INDEX, CustomRingWaveFragment.INDEX);
+                break;
+            case R.id.color_options:
+                intent.putExtra(Constants.FRAGMENT_INDEX, ColorOptionsFragment.INDEX);
+                break;
+        }
+        startActivity(intent);
     }
 
     @Override
@@ -41,4 +64,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
