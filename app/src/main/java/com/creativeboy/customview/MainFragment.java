@@ -39,6 +39,7 @@ public class MainFragment extends FragmentActivity{
                 }
                 title = "ColorOptionsFragment";
                 break;
+
         }
         setTitle(title);
         getSupportFragmentManager().beginTransaction().replace(android.R.id.content,fr,tag).commit();

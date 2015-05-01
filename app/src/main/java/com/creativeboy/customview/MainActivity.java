@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
@@ -39,6 +38,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.color_options:
                 intent.putExtra(Constants.FRAGMENT_INDEX, ColorOptionsFragment.INDEX);
                 break;
+
         }
         startActivity(intent);
     }
