@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
+import com.creativeboy.customview.fragment.FloatActionMenuFragment;
 import com.creativeboy.customview.utils.Constants;
 
 
@@ -25,6 +26,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     public void init() {
         findViewById(R.id.ring_wave).setOnClickListener(this);
         findViewById(R.id.color_options).setOnClickListener(this);
+        findViewById(R.id.float_menu).setOnClickListener(this);
     }
 
 
@@ -38,7 +40,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.color_options:
                 intent.putExtra(Constants.FRAGMENT_INDEX, ColorOptionsFragment.INDEX);
                 break;
-
+            case R.id.float_menu:
+                intent.putExtra(Constants.FRAGMENT_INDEX, FloatActionMenuFragment.INDEX);
         }
         startActivity(intent);
     }

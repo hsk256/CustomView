@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
+import com.creativeboy.customview.fragment.FloatActionMenuFragment;
 import com.creativeboy.customview.utils.Constants;
 
 
@@ -38,6 +39,14 @@ public class MainFragment extends FragmentActivity{
                     fr = new ColorOptionsFragment();
                 }
                 title = "ColorOptionsFragment";
+                break;
+            case FloatActionMenuFragment.INDEX:
+                tag = FloatActionMenuFragment.class.getSimpleName();
+                fr = getSupportFragmentManager().findFragmentByTag(tag);
+                if(fr==null) {
+                    fr = new FloatActionMenuFragment();
+                }
+                title = "FloatActionMenuFragment";
                 break;
 
         }

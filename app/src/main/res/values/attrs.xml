@@ -4,18 +4,15 @@
         <attr name="titleText" format="string" localization="suggested"/>
         <attr name="valueColor" format="color"/>
     </declare-styleable>
-
-    <declare-styleable name="FloatActionButton">
-        <attr name="fab_colorPressed" format="color"/>
-        <attr name="fab_colorDisabled" format="color"/>
-        <attr name="fab_colorNormal" format="color"/>
-        <attr name="fab_icon" format="reference"/>
-        <attr name="fab_size" format="enum">
-            <enum name="normal" value="0"/>
-            <enum name="mini" value="1"/>
+    <declare-styleable name="float_menu">
+        <attr name="margin_left" format="integer"/>
+        <attr name="margin_right" format="dimension"/>
+        <attr name="margin_bottom" format="dimension"/>
+        <attr name="position" format="enum">
+            <enum name="left_bottom" value="0"/>
+            <enum name="right_bottom" value="1"/>
         </attr>
-        <attr name="fab_title" format="string"/>
-        <attr name="fab_stroke_visible" format="boolean"/>
     </declare-styleable>
+
 
 </resources>

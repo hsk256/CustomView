@@ -15,5 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="颜色选择"/>
+    <Button
+        android:id="@+id/float_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="悬浮菜单"/>
 
 </LinearLayout>
