@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 
@@ -19,7 +20,6 @@ import com.creativeboy.customview.R;
  */
 public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
     private static final String TAG = "FloatActionMenu";
-    private boolean isExpanded = false;
     private View mMenuView;
     private OnMenuItemClickListener mMenuItemClickListener;
 
@@ -56,7 +56,7 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
 
     //item view点击事件回调接口
     public interface OnMenuItemClickListener {
-        void onClcik(View view,int pos);
+        void onClick(View view,int pos);
     }
 
 
@@ -89,7 +89,12 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        measureChildren(widthMeasureSpec, heightMeasureSpec);
+        int count = getChildCount();
+        for (int i = 0; i < count; i++)
+        {
+            // 测量child
+            measureChild(getChildAt(i), widthMeasureSpec, heightMeasureSpec);
+        }
     }
 
     /**
@@ -103,34 +108,40 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
      */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        menuViewLayout();
-        int count = getChildCount();
-        for(int i=0;i<count-1;i++) {
-            View child = getChildAt(i+1);
-            //默认子view不显示
-            child.setVisibility(View.GONE);
-            int width = child.getMeasuredWidth();
-            int height = child.getMeasuredHeight();
-            int cl = 0;
-            int ct = 0;
-            if(mPosition==Position.LEFT_BOTTOM){
-                ct = getMeasuredHeight()-(height+ChildMargin)*(i+2);
-                cl = margin_left;
-            }else if(mPosition==Position.RIGHT_BOTTOM) {
-                ct = getMeasuredHeight()-(height+ChildMargin)*(i+2);
-                cl = getMeasuredWidth()-width-margin_right;
-            }
+        if(changed) {
+            menuViewLayout();
+            int count = getChildCount();
+            for(int i=0;i<count-1;i++) {
+                View child = getChildAt(i+1);
+                //默认子view不显示
+                child.setVisibility(View.GONE);
+                int width = child.getMeasuredWidth();
+                int height = child.getMeasuredHeight();
+                int cl = 0;
+                int ct = 0;
+                if(mPosition==Position.LEFT_BOTTOM){
+                    ct = getMeasuredHeight()-(height+ChildMargin)*(i+2);
+                    cl = margin_left;
+                }else if(mPosition==Position.RIGHT_BOTTOM) {
+                    ct = getMeasuredHeight()-(height+ChildMargin)*(i+2);
+                    cl = getMeasuredWidth()-width-margin_right;
+                }
 
-            child.layout(cl,ct,cl+width,ct+height);
+                child.layout(cl, ct, cl + width, ct + height);
+            }
         }
 
     }
 
     @Override
     public void onClick(View v) {
+        if(mCurrentStatus==Status.CLOSE) {
+            rotateMenu(v,0f,405f,300);
+        }else {
+            rotateMenu(v,0f,360f,300);
+        }
 
-        rotateMenu(v,0f,405f,300);
-        toggleMenu(1000);
+        toggleMenu(300);
     }
 
 
@@ -177,21 +188,21 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
 
             int height = childView.getMeasuredHeight();
             int ct = (height+ChildMargin)*(i+1);
-
             //平移动画
-            Animation tranAnim = null;
+            AnimationSet animationSet = new AnimationSet(true);
+            Animation tranAnim ;
             //open
             if(mCurrentStatus==Status.CLOSE) {
                 tranAnim = new TranslateAnimation(0,0,ct,0);
-                childView.setClickable(true);
-                childView.setFocusable(true);
+
             }else {
                 tranAnim = new TranslateAnimation(0,0,0,ct);
-                childView.setClickable(true);
-                childView.setFocusable(true);
+
             }
             tranAnim.setDuration(duration);
             tranAnim.setFillAfter(true);
+            tranAnim.setStartOffset((i * 100) / count);
+
             tranAnim.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation animation) {
@@ -210,7 +221,17 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
 
                 }
             });
-            childView.startAnimation(tranAnim);
+            animationSet.addAnimation(tranAnim);
+            childView.startAnimation(animationSet);
+            final int pos = i+1;
+            childView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mMenuItemClickListener!=null) {
+                        mMenuItemClickListener.onClick(childView,pos);
+                    }
+                }
+            });
         }
         //切换菜单状态
         mCurrentStatus = (mCurrentStatus==Status.CLOSE?Status.OPEN:Status.CLOSE);
