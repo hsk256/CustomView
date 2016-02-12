@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
@@ -27,6 +28,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.ring_wave).setOnClickListener(this);
         findViewById(R.id.color_options).setOnClickListener(this);
         findViewById(R.id.float_menu).setOnClickListener(this);
+        findViewById(R.id.circle_menu).setOnClickListener(this);
     }
 
 
@@ -42,6 +44,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.float_menu:
                 intent.putExtra(Constants.FRAGMENT_INDEX, FloatActionMenuFragment.INDEX);
+                break;
+            case R.id.circle_menu:
+                intent.putExtra(Constants.FRAGMENT_INDEX, CircleActionMenuFragment.INDEX);
+                break;
         }
         startActivity(intent);
     }

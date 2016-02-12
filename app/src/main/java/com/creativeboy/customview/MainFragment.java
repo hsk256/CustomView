@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
+import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
@@ -47,6 +48,14 @@ public class MainFragment extends FragmentActivity{
                     fr = new FloatActionMenuFragment();
                 }
                 title = "FloatActionMenuFragment";
+                break;
+            case CircleActionMenuFragment.INDEX:
+                tag = CircleActionMenuFragment.class.getSimpleName();
+                fr = getSupportFragmentManager().findFragmentByTag(tag);
+                if(fr==null) {
+                    fr = new CircleActionMenuFragment();
+                }
+                title = "CircleActionMenuFragment";
                 break;
 
         }

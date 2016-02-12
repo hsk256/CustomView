@@ -200,7 +200,7 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
 
             }
             tranAnim.setDuration(duration);
-            tranAnim.setFillAfter(true);
+            //tranAnim.setFillAfter(true);
             tranAnim.setStartOffset((i * 100) / count);
 
             tranAnim.setAnimationListener(new Animation.AnimationListener() {
@@ -222,6 +222,8 @@ public class FloatActionMenu extends ViewGroup implements View.OnClickListener{
                 }
             });
             animationSet.addAnimation(tranAnim);
+            //animationSet.setFillAfter(true);
+           // animationSet.setFillBefore(false);
             childView.startAnimation(animationSet);
             final int pos = i+1;
             childView.setOnClickListener(new OnClickListener() {

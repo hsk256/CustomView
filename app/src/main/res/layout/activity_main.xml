@@ -20,5 +20,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="悬浮菜单"/>
+    <Button
+        android:id="@+id/circle_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="圆形菜单"/>
 
 </LinearLayout>
