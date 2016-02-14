@@ -8,6 +8,7 @@ import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
+import com.creativeboy.customview.fragment.ScrollerFragment;
 import com.creativeboy.customview.utils.Constants;
 
 
@@ -56,6 +57,14 @@ public class MainFragment extends FragmentActivity{
                     fr = new CircleActionMenuFragment();
                 }
                 title = "CircleActionMenuFragment";
+                break;
+            case ScrollerFragment.INDEX:
+                tag = ScrollerFragment.class.getSimpleName();
+                fr = getSupportFragmentManager().findFragmentByTag(tag);
+                if(fr==null) {
+                    fr = new ScrollerFragment();
+                }
+                title = "ScrollerFragment";
                 break;
 
         }

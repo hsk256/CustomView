@@ -25,5 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="圆形菜单"/>
+    <Button
+        android:id="@+id/scroller_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Scroller实现viewpager"/>
 
 </LinearLayout>

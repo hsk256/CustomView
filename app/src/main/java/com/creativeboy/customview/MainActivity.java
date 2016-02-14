@@ -1,8 +1,8 @@
 package com.creativeboy.customview;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +11,7 @@ import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
+import com.creativeboy.customview.fragment.ScrollerFragment;
 import com.creativeboy.customview.utils.Constants;
 
 
@@ -29,6 +30,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.color_options).setOnClickListener(this);
         findViewById(R.id.float_menu).setOnClickListener(this);
         findViewById(R.id.circle_menu).setOnClickListener(this);
+        findViewById(R.id.scroller_viewpager).setOnClickListener(this);
     }
 
 
@@ -47,6 +49,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.circle_menu:
                 intent.putExtra(Constants.FRAGMENT_INDEX, CircleActionMenuFragment.INDEX);
+                break;
+            case R.id.scroller_viewpager:
+                intent.putExtra(Constants.FRAGMENT_INDEX, ScrollerFragment.INDEX);
                 break;
         }
         startActivity(intent);

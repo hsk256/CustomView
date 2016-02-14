@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.creativeboy.customview.view.ScrollerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/scroll_to"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Scroll To"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/scroll_by"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Scroll By"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Scroll By"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Scroll By"
+        android:textAllCaps="false"
+        />
+</com.creativeboy.customview.view.ScrollerLayout>
