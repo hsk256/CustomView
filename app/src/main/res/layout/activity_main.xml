@@ -31,5 +31,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="Scroller实现viewpager"/>
+    <Button
+        android:id="@+id/viewGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义ViewGroup1"/>
 
 </LinearLayout>

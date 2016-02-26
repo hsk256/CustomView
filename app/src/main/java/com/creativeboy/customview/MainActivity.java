@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
+import com.creativeboy.customview.fragment.CustomImgContainerFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
 import com.creativeboy.customview.fragment.ScrollerFragment;
@@ -31,6 +32,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.float_menu).setOnClickListener(this);
         findViewById(R.id.circle_menu).setOnClickListener(this);
         findViewById(R.id.scroller_viewpager).setOnClickListener(this);
+        findViewById(R.id.viewGroup1).setOnClickListener(this);
     }
 
 
@@ -52,6 +54,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.scroller_viewpager:
                 intent.putExtra(Constants.FRAGMENT_INDEX, ScrollerFragment.INDEX);
+                break;
+            case R.id.viewGroup1:
+                intent.putExtra(Constants.FRAGMENT_INDEX, CustomImgContainerFragment.INDEX);
                 break;
         }
         startActivity(intent);
