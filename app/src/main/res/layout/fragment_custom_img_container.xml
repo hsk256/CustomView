@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.creativeboy.customview.view.CustomImgContainer xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
 
 
     <TextView
@@ -36,14 +38,12 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="#0000ff"
+    <com.creativeboy.customview.view.CustomTitleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="3"
-        android:textColor="#FFFFFF"
-        android:layout_marginLeft="20dp"
-        android:textSize="22sp"
+        custom:titleTextCustom="3233"
+        custom:titleSize="20sp"
+        custom:titleColor="@color/accent_material_dark"
         android:textStyle="bold" />
 </com.creativeboy.customview.view.CustomImgContainer>

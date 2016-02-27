@@ -30,4 +30,14 @@
         <enum name="right_bottom" value="3"></enum>
     </attr>
 
+    <declare-styleable name="CustomTitleView">
+        <attr name="titleTextCustom" />
+        <attr name="titleColor"/>
+        <attr name="titleSize" />
+    </declare-styleable>
+
+    <attr name="titleTextCustom" format="string"></attr>
+    <attr name="titleColor" format="color"/>
+    <attr name="titleSize" format="dimension"/>
+
 </resources>
