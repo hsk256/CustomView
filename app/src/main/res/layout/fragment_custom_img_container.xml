@@ -28,7 +28,7 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
+    <com.creativeboy.customview.view.CustomProgressView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="#ff0000"
@@ -36,11 +36,15 @@
         android:text="2"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        custom:speed="20"
+        custom:width="30px"
+        custom:firstColor="@color/dim_foreground_material_dark"
+        custom:secondColor="@color/ripple_material_light"/>
 
     <com.creativeboy.customview.view.CustomTitleView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:gravity="center"
         custom:titleTextCustom="3233"
         custom:titleSize="20sp"

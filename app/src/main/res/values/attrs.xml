@@ -40,4 +40,16 @@
     <attr name="titleColor" format="color"/>
     <attr name="titleSize" format="dimension"/>
 
+
+    <declare-styleable name="CustomProgressView" >
+        <attr name="firstColor"/>
+        <attr name="secondColor"/>
+        <attr name="width"/>
+        <attr name="speed"/>
+    </declare-styleable>
+
+    <attr name="firstColor" format="color"/>
+    <attr name="secondColor" format="color"/>
+    <attr name="width" format="dimension"/>
+    <attr name="speed" format="integer"/>
 </resources>
