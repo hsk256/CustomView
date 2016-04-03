@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 
 import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
@@ -13,11 +14,11 @@ import com.creativeboy.customview.fragment.CustomImgContainerFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
 import com.creativeboy.customview.fragment.ScrollerFragment;
+import com.creativeboy.customview.fragment.ViewDragHelperFragment;
 import com.creativeboy.customview.utils.Constants;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.circle_menu).setOnClickListener(this);
         findViewById(R.id.scroller_viewpager).setOnClickListener(this);
         findViewById(R.id.viewGroup1).setOnClickListener(this);
+        findViewById(R.id.viewdrag).setOnClickListener(this);
     }
 
 
@@ -57,6 +59,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.viewGroup1:
                 intent.putExtra(Constants.FRAGMENT_INDEX, CustomImgContainerFragment.INDEX);
+                break;
+            case R.id.viewdrag:
+                intent.putExtra(Constants.FRAGMENT_INDEX, ViewDragHelperFragment.INDEX);
                 break;
         }
         startActivity(intent);

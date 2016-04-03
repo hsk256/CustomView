@@ -10,6 +10,7 @@ import com.creativeboy.customview.fragment.CustomImgContainerFragment;
 import com.creativeboy.customview.fragment.CustomRingWaveFragment;
 import com.creativeboy.customview.fragment.FloatActionMenuFragment;
 import com.creativeboy.customview.fragment.ScrollerFragment;
+import com.creativeboy.customview.fragment.ViewDragHelperFragment;
 import com.creativeboy.customview.utils.Constants;
 
 
@@ -74,6 +75,14 @@ public class MainFragment extends FragmentActivity{
                     fr = new CustomImgContainerFragment();
                 }
                 title = "CustomImgContainerFragment";
+                break;
+            case ViewDragHelperFragment.INDEX:
+                tag = ViewDragHelperFragment.class.getSimpleName();
+                fr = getSupportFragmentManager().findFragmentByTag(tag);
+                if(fr==null) {
+                    fr = new ViewDragHelperFragment();
+                }
+                title = "ViewDragHelperFragment";
                 break;
 
         }

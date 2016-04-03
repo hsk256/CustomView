@@ -29,6 +29,7 @@ public class ScrollerLayout extends ViewGroup{
     private float mXLastMove;
     public ScrollerLayout(Context context) {
         super(context);
+
     }
 
     public ScrollerLayout(Context context, AttributeSet attrs) {
