@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.creativeboy.customview.view.VDHLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,6 +12,7 @@
         android:layout_height="100dp"
         android:text="TextView One"
         android:gravity="center"
+        android:clickable="true"
         android:layout_gravity="center"
         android:background="#44ff0000"
         />
@@ -23,7 +23,16 @@
         android:text="TextView Two"
         android:gravity="center"
         android:layout_gravity="center"
-        android:background="#44ff0000"
+        android:background="#44ff00f0"
+        />
+    <TextView
+        android:id="@+id/tv_three"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="TextView Three"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="#44333cc0"
         />
 
 </com.creativeboy.customview.view.VDHLayout>
