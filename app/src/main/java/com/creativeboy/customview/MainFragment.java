@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
+import com.creativeboy.customview.fragment.CanvasViewFragment;
 import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomImgContainerFragment;
@@ -83,6 +84,14 @@ public class MainFragment extends FragmentActivity{
                     fr = new ViewDragHelperFragment();
                 }
                 title = "ViewDragHelperFragment";
+                break;
+            case CanvasViewFragment.INDEX:
+                tag = CanvasViewFragment.class.getSimpleName();
+                fr = getSupportFragmentManager().findFragmentByTag(tag);
+                if(fr==null) {
+                    fr = new CanvasViewFragment();
+                }
+                title = "CanvasViewFragment";
                 break;
 
         }

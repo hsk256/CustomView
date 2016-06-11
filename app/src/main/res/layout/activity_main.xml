@@ -44,5 +44,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="ViewDragHelper"/>
+    <Button
+        android:id="@+id/canvas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Canvas绘制view"/>
 
 </LinearLayout>

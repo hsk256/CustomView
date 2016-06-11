@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 
+import com.creativeboy.customview.fragment.CanvasViewFragment;
 import com.creativeboy.customview.fragment.CircleActionMenuFragment;
 import com.creativeboy.customview.fragment.ColorOptionsFragment;
 import com.creativeboy.customview.fragment.CustomImgContainerFragment;
@@ -37,6 +38,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.scroller_viewpager).setOnClickListener(this);
         findViewById(R.id.viewGroup1).setOnClickListener(this);
         findViewById(R.id.viewdrag).setOnClickListener(this);
+        findViewById(R.id.canvas).setOnClickListener(this);
     }
 
 
@@ -64,6 +66,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.viewdrag:
                 intent.putExtra(Constants.FRAGMENT_INDEX, ViewDragHelperFragment.INDEX);
+                break;
+            case R.id.canvas:
+                intent.putExtra(Constants.FRAGMENT_INDEX, CanvasViewFragment.INDEX);
                 break;
         }
         startActivity(intent);
